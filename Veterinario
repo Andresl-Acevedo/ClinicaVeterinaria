@@ -1,1 +1,17 @@
+package clinica_veterinaria;
 
+public class Veterinario {
+    private String nombre;
+
+    public Veterinario(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void actualizarPesoMascota(Mascota mascota, double nuevoPeso) {
+        mascota.actualizarPeso(nuevoPeso);
+    }
+}
