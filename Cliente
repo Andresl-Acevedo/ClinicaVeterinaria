@@ -1,1 +1,26 @@
+package clinica_veterinaria;
 
+public class Cliente {
+    private String nombre;
+    private Mascota mascota;
+
+    public Cliente(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void registrarMascota(String nombre, String especie, int edad, double peso) {
+        mascota = new Mascota(nombre, especie, edad, peso);
+    }
+
+    public void eliminarMascota() {
+        mascota = null;
+    }
+}
