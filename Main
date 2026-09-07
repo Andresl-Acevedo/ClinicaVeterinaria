@@ -1,1 +1,44 @@
+package clinica_veterinaria;
 
+public class Clinica_Veterinaria {
+
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente("Andres");
+
+        cliente.registrarMascota("Odiseo", "Canino", 7, 28);
+
+        Mascota mascota = cliente.getMascota();
+
+        Veterinario veterinario = new Veterinario("Dr. Oscar");
+
+        System.out.println("Cliente: " + cliente.getNombre());
+        System.out.println("Mascota: " + mascota.getNombre());
+        System.out.println("Especie: " + mascota.getEspecie());
+        System.out.println("Edad: " + mascota.getEdad());
+        System.out.println("Peso: " + mascota.getPeso());
+
+        veterinario.actualizarPesoMascota(mascota, 26);
+
+        System.out.println("\nNuevo peso: " + mascota.getPeso());
+
+        mascota.registrarConsulta("07/09/2026", "Dolor de estomago", "Sarna", "Antihistaminicos y cono de la verguenza");
+
+        Consulta consulta = mascota.getConsulta();
+
+        System.out.println("\nConsulta:");
+        System.out.println("Fecha: " + consulta.getFecha());
+        System.out.println("Motivo: " + consulta.getMotivo());
+        System.out.println("Diagnostico: " + consulta.getDiagnostico());
+        System.out.println("Tratamiento: " + consulta.getTratamiento());
+        
+        mascota.eliminarConsulta();
+
+        System.out.println("\nConsulta eliminada.");
+
+        System.out.println("Cliente sigue registrado: "
+                + cliente.getNombre());
+
+        System.out.println("Mascota sigue registrada: "
+                + mascota.getNombre());
+    }
+} 
