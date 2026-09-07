@@ -1,1 +1,57 @@
+package clinica_veterinaria;
 
+public class Mascota {
+    private String nombre;
+    private String especie;
+    private int edad;
+    private double peso;
+    private Consulta consulta;
+
+    public Mascota(String nombre, String especie, int edad, double peso) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.edad = edad;
+
+        if (peso > 0) {
+            this.peso = peso;
+        } else {
+            this.peso = 1;
+        }
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public Consulta getConsulta() {
+        return consulta;
+    }
+
+    public void actualizarPeso(double nuevoPeso) {
+        if (nuevoPeso > 0) {
+            peso = nuevoPeso;
+        }
+    }
+
+    public void registrarConsulta(String fecha, String motivo,
+            String diagnostico, String tratamiento) {
+
+        consulta = new Consulta(fecha, motivo, diagnostico, tratamiento);
+    }
+
+    public void eliminarConsulta() {
+        consulta = null;
+    }
+}
